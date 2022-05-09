@@ -4,6 +4,7 @@ import axios from 'axios';
 // import Components
 import Cards from './Components/Cards/Cards';
 import CountryPicker from './Components/CountryPicker/CountryPicker';
+import Footer from './Components/Footer/Footer';
 
 const App = () => {
   const [totalConfirmed, setTotalConfirmed] = useState(0);
@@ -41,19 +42,25 @@ const App = () => {
 
   return (
     <>
-      <h1 className='text-center my-5'>Covid 19 World Wide Latest Report</h1>
+      <h1 style={{
+        fontFamily: '"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif'
+      }} className='text-center my-5'>Covid 19 World Wide Latest Report</h1>
+
       <Cards
         totalConfirmed={totalConfirmed}
         totalRecovered={totalRecovered}
         totalDeaths={totalDeaths}
         lastUpdate={lastUpdate}
       />
+
       <CountryPicker
         covidSummary={covidSummary}
         setTotalConfirmed={setTotalConfirmed}
         setTotalRecovered={setTotalRecovered}
         setTotalDeaths={setTotalDeaths}
       />
+
+      <Footer />
     </>
   )
 }
