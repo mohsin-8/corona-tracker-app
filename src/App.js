@@ -15,7 +15,7 @@ const App = () => {
 
   useEffect(() => {
     setLoading(true)
-    const data = async () => {
+    const getData = async () => {
       await axios.get(`https://api.covid19api.com/summary`)
         .then(res => {
           setLoading(false);
@@ -26,11 +26,11 @@ const App = () => {
             setLastUpdate(res.data.Global.Date);
             setCovidSummary(res.data);
           }
-          console.log(res);
+          // console.log(res);
         })
         .catch(error => console.log(error))
     };
-    data();
+    getData();
   }, []);
 
   if (loading) {
@@ -50,6 +50,9 @@ const App = () => {
       />
       <CountryPicker
         covidSummary={covidSummary}
+        setTotalConfirmed={setTotalConfirmed}
+        setTotalRecovered={setTotalRecovered}
+        setTotalDeaths={setTotalDeaths}
       />
     </>
   )

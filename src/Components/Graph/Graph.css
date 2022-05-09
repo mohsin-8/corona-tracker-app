@@ -1,0 +1,11 @@
+@media (min-width: 770px) {
+  .chart-container {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 390px) {
+  .chart-container {
+    width: 100% !important;
+  }
+}
